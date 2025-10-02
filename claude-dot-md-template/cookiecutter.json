@@ -1,0 +1,18 @@
+{
+    "project_name": "Claude AI Memory",
+    "project_slug": ".claude",
+    "project_description": "AI memory configuration for Claude Code",
+    "include_agents": true,
+    "include_commands": true,
+    "workflow_provider": ["github", "linear", "none"],
+    "include_github_integration": "{% if cookiecutter.workflow_provider == 'github' %}true{% else %}false{% endif %}",
+    "include_linear_integration": "{% if cookiecutter.workflow_provider == 'linear' %}true{% else %}false{% endif %}",
+    "include_workflow_automation": ["standard", "advanced", "none"],
+    "include_web_search": true,
+    "default_tools": "Read, Grep, Glob, LS",
+    "organization_name": "My Organization",
+    "github_org": "your-org",
+    "github_repo": "your-repo",
+    "repository_path": "/shared/",
+    "_output_dir": "../out"
+}

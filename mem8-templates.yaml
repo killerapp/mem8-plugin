@@ -1,0 +1,57 @@
+# mem8 Template Manifest
+# Version 1 format for external template sources
+#
+# This manifest describes the templates available in this source.
+# It enables mem8 to discover, validate, and install templates from
+# external locations (GitHub repos, local paths, etc.)
+
+version: 1
+
+# Relative path to templates directory (from this manifest file)
+source: "."
+
+# Metadata about this template source
+metadata:
+  name: "mem8 Official Templates"
+  version: "2.10.0"
+  description: "Official mem8 templates for Claude Code integration and shared thoughts"
+  author: "killerapp"
+  license: "Apache-2.0"
+  repository: "https://github.com/killerapp/mem8"
+
+# Template definitions
+templates:
+  # Full setup: Claude Code + Shared Thoughts
+  full:
+    path: "."  # Uses both templates below
+    type: "composite"
+    description: "Complete setup with Claude Code integration and shared thoughts repository"
+    variables:
+      shared_enabled: false
+      username: "{{ env.USERNAME | default('user') }}"
+
+  # Claude Code integration only
+  claude-config:
+    path: "claude-dot-md-template"
+    type: "cookiecutter"
+    description: "Claude Code workspace integration (.claude/ directory with agents and commands)"
+    variables:
+      project_slug: ".claude"
+      workflow_provider: "github"
+      include_workflow_automation: "standard"
+      github_org: "your-org"
+      github_repo: "your-repo"
+      username: "{{ env.USERNAME | default('user') }}"
+      shared_enabled: false
+
+  # Shared thoughts repository only
+  thoughts-repo:
+    path: "shared-thoughts-template"
+    type: "cookiecutter"
+    description: "Shared knowledge repository structure (thoughts/ directory)"
+    variables:
+      project_slug: "thoughts"
+      username: "{{ env.USERNAME | default('user') }}"
+      github_org: "your-org"
+      github_repo: "thoughts"
+      include_sync_scripts: true

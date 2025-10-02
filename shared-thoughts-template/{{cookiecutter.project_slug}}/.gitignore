@@ -1,0 +1,35 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Personal scratch files (use {{cookiecutter.username}}/notes/ instead)
+scratch.*
+temp.*
+
+# Backup files
+*.bak
+*.backup
+
+# Log files
+*.log
+
+# Don't ignore the searchable directory structure
+!searchable/
+!searchable/.gitkeep
