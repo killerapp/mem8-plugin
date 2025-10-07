@@ -1,6 +1,6 @@
-# Shared Thoughts Template
+# Shared Memory Template
 
-Cookiecutter template for creating a shared thoughts repository structure based on patterns found in AI-assisted development workflows.
+Cookiecutter template for creating a shared memory repository structure based on patterns found in AI-assisted development workflows.
 
 ## Quick Start
 
@@ -9,15 +9,15 @@ Cookiecutter template for creating a shared thoughts repository structure based 
 uv tool install cookiecutter
 
 # Generate with default configuration
-cookiecutter shared-thoughts-template --config-file thoughts-config-default.yaml
+cookiecutter shared-memory-template --config-file memory-config-default.yaml
 
 # Interactive mode
-cookiecutter shared-thoughts-template
+cookiecutter shared-memory-template
 ```
 
 ## Features
 
-- **Structured thoughts directory** with shared, personal, and global sections
+- **Structured memory directory** with shared, personal, and global sections
 - **Searchable directory** with automatic symlinks/junctions for unified searching
 - **Git integration** with automatic repository initialization
 - **Cross-platform sync scripts** (Windows .bat, Unix .sh, PowerShell .ps1)
@@ -26,18 +26,18 @@ cookiecutter shared-thoughts-template
 ## Generated Structure
 
 ```
-thoughts/
+memory/
 ├── shared/                    # Team-wide documents
 │   ├── plans/                # Implementation plans
 │   ├── research/             # Research documents  
 │   ├── tickets/              # GitHub issues (123.md)
 │   ├── prs/                  # PR descriptions
 │   └── decisions/            # Technical decisions
-├── {username}/               # Personal thoughts (configurable)
+├── {username}/               # Personal memory (configurable)
 │   ├── tickets/              # Personal ticket copies
 │   ├── notes/               # Personal notes
-│   └── archive/             # Archived thoughts
-├── global/                   # Cross-repository thoughts
+│   └── archive/             # Archived memory
+├── global/                   # Cross-repository memory
 │   └── shared/              # Global shared patterns
 └── searchable/              # Unified search directory
     ├── shared/ -> ../shared/
@@ -49,11 +49,11 @@ thoughts/
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `project_name` | Shared Thoughts Repository | Display name |
-| `project_slug` | thoughts | Directory name |
+| `project_name` | Shared Memory Repository | Display name |
+| `project_slug` | memory | Directory name |
 | `username` | vaski | Personal directory name |
 | `github_org` | your-org | GitHub organization |
-| `github_repo` | thoughts | Repository name |
+| `github_repo` | memory | Repository name |
 | `project_root` | C:/Users/vaski/projects | Base project directory |
 | `include_searchable_links` | true | Create searchable symlinks |
 | `sync_method` | git | Sync mechanism |
@@ -63,12 +63,12 @@ thoughts/
 
 ### With Configuration File
 ```bash
-cookiecutter shared-thoughts-template --config-file thoughts-config-default.yaml --output-dir ~/projects
+cookiecutter shared-memory-template --config-file memory-config-default.yaml --output-dir ~/projects
 ```
 
 ### Custom Configuration
 ```bash
-cookiecutter shared-thoughts-template \
+cookiecutter shared-memory-template \
   --no-input \
   username=alice \
   github_org=mycompany \
@@ -79,20 +79,20 @@ cookiecutter shared-thoughts-template \
 
 This template is designed to work with the `claude-dot-md-template` and follows the patterns referenced in:
 
-- **thoughts-locator** agent - for finding documents
-- **thoughts-analyzer** agent - for analyzing content  
-- Various commands that reference `thoughts/shared/`, `thoughts/{user}/`, etc.
+- **memory-locator** agent - for finding documents
+- **memory-analyzer** agent - for analyzing content  
+- Various commands that reference `memory/shared/`, `memory/{user}/`, etc.
 
 ## Sync Scripts
 
 The generated repository includes three sync scripts:
 
-- `sync-thoughts.bat` - Windows batch script
-- `sync-thoughts.sh` - Unix/Linux shell script  
-- `sync-thoughts.ps1` - PowerShell script
+- `sync-memory.bat` - Windows batch script
+- `sync-memory.sh` - Unix/Linux shell script  
+- `sync-memory.ps1` - PowerShell script
 
 All scripts:
-- Add changes from the `thoughts/` directory
+- Add changes from the `memory/` directory
 - Prompt for commit message (with default)
 - Commit and push to remote if configured
 - Show status after sync

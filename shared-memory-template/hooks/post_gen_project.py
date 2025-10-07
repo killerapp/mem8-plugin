@@ -61,17 +61,17 @@ def setup_searchable_directory():
         print("Skipping searchable directory setup (disabled in config)")
         return
     
-    thoughts_dir = project_dir / 'thoughts'
-    searchable_dir = thoughts_dir / 'searchable'
+    memory_dir = project_dir / 'memory'
+    searchable_dir = memory_dir / 'searchable'
     
     # Create searchable directory
     searchable_dir.mkdir(parents=True, exist_ok=True)
     
     # Define the directories to link
     directories_to_link = [
-        ('shared', thoughts_dir / 'shared'),
-        ('{{ cookiecutter.username }}', thoughts_dir / '{{ cookiecutter.username }}'),
-        ('global', thoughts_dir / 'global')
+        ('shared', memory_dir / 'shared'),
+        ('{{ cookiecutter.username }}', memory_dir / '{{ cookiecutter.username }}'),
+        ('global', memory_dir / 'global')
     ]
     
     # Only include global if enabled
@@ -117,7 +117,7 @@ def setup_git_repository():
         
         # Set up remote if URL is provided
         repo_url = '{{ cookiecutter.shared_repo_url }}'
-        if repo_url and repo_url != 'https://github.com/your-org/thoughts':
+        if repo_url and repo_url != 'https://github.com/your-org/memory':
             subprocess.run([
                 'git', 'remote', 'add', 'origin', repo_url
             ], cwd=project_dir, check=True, capture_output=True)
@@ -142,10 +142,10 @@ def main():
     print("\nNext steps:")
     print("1. Review the generated structure")
     print("2. Customize the README.md if needed")
-    print("3. Add your first thoughts documents")
+    print("3. Add your first memory documents")
     
     if '{{ cookiecutter.include_sync_scripts }}'.lower() == 'true':
-        print("4. Use the sync scripts to keep thoughts synchronized")
+        print("4. Use the sync scripts to keep memory synchronized")
     
     project_root = '{{ cookiecutter.project_root }}'.replace('\\', '/')
     default_root = 'C:/Users/vaski/projects'

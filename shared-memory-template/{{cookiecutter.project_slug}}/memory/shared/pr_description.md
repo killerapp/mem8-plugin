@@ -1,6 +1,6 @@
 # PR Description Template
 
-Use this template when describing pull requests. Copy this template to `thoughts/shared/prs/{pr_number}_description.md` and fill it out.
+Use this template when describing pull requests. Copy this template to `memory/shared/prs/{pr_number}_description.md` and fill it out.
 
 ## What problem does this solve?
 

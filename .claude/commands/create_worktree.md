@@ -29,9 +29,9 @@ launch prompt:
 
 command to run:
 
-    mem8 dashboard -w ~/wt/mem8/123 "/implement_plan at $FILEPATH and when you are done implementing and all tests pass, read ./claude/commands/commit.md and create a commit, then read ./claude/commands/describe_pr.md and create a PR, then add a comment to the Linear ticket with the PR link"
+    mem8 dashboard -w ~/wt/mem8/123 "/implement_plan at $FILEPATH and when you are done implementing and all tests pass, read ./claude/commands/commit.md and create a commit, then read ./claude/commands/describe_pr.md and create a PR, then add a comment to the GitHub issue with the PR link"
 ```
 
 incorporate any user feedback then:
 
-4. launch implementation session: `mem8 dashboard -w ~/wt/mem8/123 "/implement_plan at $FILEPATH and when you are done implementing and all tests pass, read ./claude/commands/commit.md and create a commit, then read ./claude/commands/describe_pr.md and create a PR, then add a comment to the Linear ticket with the PR link"`
+4. launch implementation session: `mem8 dashboard -w ~/wt/mem8/123 "/implement_plan at $FILEPATH and when you are done implementing and all tests pass, read ./claude/commands/commit.md and create a commit, then read ./claude/commands/describe_pr.md and create a PR, then add a comment to the GitHub issue with the PR link"`

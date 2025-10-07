@@ -4,7 +4,7 @@ Use this agent for GitHub Issues and repository workflow automation.
 
 ## Purpose
 
-This agent specializes in GitHub repository management and workflow automation, providing a simpler alternative to complex Linear workflows.
+This agent specializes in GitHub repository management and workflow automation using GitHub Issues as the primary task tracking system.
 
 ## Focus Areas
 
