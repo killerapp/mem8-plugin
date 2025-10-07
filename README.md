@@ -10,22 +10,22 @@ This repository contains cookiecutter templates that can be used with `mem8 init
 Claude Code workspace integration with agents and workflow commands.
 
 **What's included:**
-- 🤖 7 specialized agents (codebase-analyzer, thoughts-locator, web-search-researcher, etc.)
+- 🤖 7 specialized agents (codebase-analyzer, memory-locator, web-search-researcher, etc.)
 - 📝 15+ workflow commands (commit, create_plan, describe_pr, etc.)
 - 🔧 GitHub/Linear workflow integration
 - 🧠 Memory-aware development workflows
 
-### thoughts-repo
+### memory-repo
 Shared knowledge repository structure for team collaboration.
 
 **What's included:**
 - 📁 Organized directory structure for plans, research, decisions
 - 🔄 Git-based sync scripts (bash, PowerShell, batch)
 - 👥 Multi-user support with personal namespaces
-- 🔗 Symbolic link support for shared thoughts
+- 🔗 Symbolic link support for shared memory
 
 ### full
-Complete setup combining both claude-config and thoughts-repo.
+Complete setup combining both claude-config and memory-repo.
 
 ## 🚀 Usage
 
@@ -69,12 +69,16 @@ List available templates:
 mem8 templates list --source killerapp/mem8-templates
 ```
 
+## 🛠️ Toolbelt Manifest
+
+Workspace templates seed a `.mem8/toolbelt.json` file that lists core, recommended, and optional CLI tools for Windows 11+, macOS, and modern Linux environments. The manifest lets `mem8 doctor` audit local installs without acting as a package manager, so teams can keep requirements centralised while developers install tools by hand. Update the manifest in your fork to publish organisation-specific defaults that every new project inherits.
+
 ## 🔧 Customization
 
 ### Fork This Repository
 
 1. Fork this repository to customize templates for your organization
-2. Modify templates in `claude-dot-md-template/` and `shared-thoughts-template/`
+2. Modify templates in `claude-dot-md-template/` and `shared-memory-template/`
 3. Update `mem8-templates.yaml` manifest with your changes
 4. Use your fork:
 

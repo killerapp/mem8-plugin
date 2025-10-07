@@ -1,22 +1,22 @@
 # {{cookiecutter.project_name}}
 
-Shared thoughts repository for AI-assisted development and knowledge management.
+Shared memory repository for AI-assisted development and knowledge management.
 
 ## Structure
 
 ```
-thoughts/
+memory/
 ├── shared/                    # Team-wide documents
 │   ├── plans/                # Implementation plans
 │   ├── research/             # Research documents  
 │   ├── tickets/              # GitHub issues (123.md)
 │   ├── prs/                  # PR descriptions
 │   └── decisions/            # Technical decisions
-├── {{cookiecutter.username}}/                  # Personal thoughts
+├── {{cookiecutter.username}}/                  # Personal memory
 │   ├── tickets/              # Personal ticket copies
 │   ├── notes/               # Personal notes
-│   └── archive/             # Archived thoughts
-├── global/                   # Cross-repository thoughts
+│   └── archive/             # Archived memory
+├── global/                   # Cross-repository memory
 │   └── shared/              # Global shared patterns
 └── searchable/              # Unified search directory
     ├── shared/ -> ../shared/
@@ -31,19 +31,19 @@ thoughts/
 **Research Documents:**
 ```bash
 # Timestamped research files
-thoughts/shared/research/YYYY-MM-DD_HH-MM-SS_topic.md
+memory/shared/research/YYYY-MM-DD_HH-MM-SS_topic.md
 ```
 
 **Implementation Plans:**
 ```bash
 # Descriptive plan names
-thoughts/shared/plans/fix-authentication-flow.md
+memory/shared/plans/fix-authentication-flow.md
 ```
 
 **Ticket References:**
 ```bash
 # GitHub issue format
-thoughts/shared/tickets/123.md
+memory/shared/tickets/123.md
 ```
 
 ### Syncing Changes
@@ -52,23 +52,23 @@ thoughts/shared/tickets/123.md
 Use the provided sync scripts:
 ```bash
 # Windows
-./sync-thoughts.bat
+./sync-memory.bat
 
 # Unix/Linux
-./sync-thoughts.sh
+./sync-memory.sh
 ```
 {% endif %}
 
 Or manually with git:
 ```bash
-git add thoughts/
-git commit -m "Update thoughts: brief description"
+git add memory/
+git commit -m "Update memory: brief description"
 git push origin main
 ```
 
 ## Integration
 
-This thoughts directory integrates with:
+This memory directory integrates with:
 - Claude Code `.claude` configurations
 - GitHub issue tracking and PR workflows
 - Cross-project knowledge sharing
@@ -91,5 +91,5 @@ This thoughts directory integrates with:
 
 The `searchable/` directory contains links to all content for unified searching:
 - Use grep, ripgrep, or IDE search across `searchable/`
-- Always reference actual paths in documentation: `thoughts/shared/...`
+- Always reference actual paths in documentation: `memory/shared/...`
 - Links are maintained automatically

@@ -14,18 +14,18 @@ source: "."
 metadata:
   name: "mem8 Official Templates"
   version: "2.10.0"
-  description: "Official mem8 templates for Claude Code integration and shared thoughts"
+  description: "Official mem8 templates for Claude Code integration and shared memory"
   author: "killerapp"
   license: "Apache-2.0"
   repository: "https://github.com/killerapp/mem8"
 
 # Template definitions
 templates:
-  # Full setup: Claude Code + Shared Thoughts
+  # Full setup: Claude Code + Shared Memory
   full:
     path: "."  # Uses both templates below
     type: "composite"
-    description: "Complete setup with Claude Code integration and shared thoughts repository"
+    description: "Complete setup with Claude Code integration and shared memory repository"
     variables:
       shared_enabled: false
       username: "{{ env.USERNAME | default('user') }}"
@@ -44,16 +44,16 @@ templates:
       username: "{{ env.USERNAME | default('user') }}"
       shared_enabled: false
 
-  # Shared thoughts repository only
-  thoughts-repo:
-    path: "shared-thoughts-template"
+  # Shared memory repository only
+  memory-repo:
+    path: "shared-memory-template"
     type: "cookiecutter"
-    description: "Shared knowledge repository structure (thoughts/ directory)"
+    description: "Shared knowledge repository structure (memory/ directory)"
     variables:
-      project_slug: "thoughts"
+      project_slug: "memory"
       username: "{{ env.USERNAME | default('user') }}"
       github_org: "your-org"
-      github_repo: "thoughts"
+      github_repo: "memory"
       include_sync_scripts: true
 
 # Recommended CLI toolbelt for AI/automation workflows
