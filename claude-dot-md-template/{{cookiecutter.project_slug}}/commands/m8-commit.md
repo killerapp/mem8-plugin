@@ -1,3 +1,8 @@
+---
+allowed-tools: Bash(git:*)
+description: Create git commits for changes made during this session
+---
+
 # Commit Changes
 
 You are tasked with creating git commits for the changes made during this session.

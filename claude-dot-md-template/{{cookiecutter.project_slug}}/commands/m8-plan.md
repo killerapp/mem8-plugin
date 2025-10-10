@@ -1,3 +1,8 @@
+---
+allowed-tools: Read, Write, Bash(git:*), Task
+description: Create a detailed implementation plan for a feature or task
+---
+
 # Create Implementation Plan
 
 You are tasked with creating a detailed implementation plan for a feature or task.

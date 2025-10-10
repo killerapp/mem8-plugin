@@ -1,3 +1,8 @@
+---
+allowed-tools: Read, Task, Bash(mem8:*), Bash(gh:*), Bash(git:*)
+description: Conduct comprehensive codebase research by spawning parallel sub-agents
+---
+
 # Research Codebase
 
 You are tasked with conducting comprehensive research across the codebase to answer user questions by spawning parallel sub-agents and synthesizing their findings.

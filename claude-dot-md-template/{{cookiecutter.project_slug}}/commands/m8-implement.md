@@ -1,3 +1,9 @@
+---
+allowed-tools: Read, Write, Edit, Bash, Task
+argument-hint: [plan-path]
+description: Implement an approved technical plan from memory/shared/plans/
+---
+
 # Implement Plan
 
 You are tasked with implementing an approved technical plan from `memory/shared/plans/`. These plans contain phases with specific changes and success criteria.

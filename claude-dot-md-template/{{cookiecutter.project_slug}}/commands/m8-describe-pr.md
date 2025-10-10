@@ -1,3 +1,9 @@
+---
+allowed-tools: Read, Write, Bash(gh:*), Bash(git:*), Bash(mem8:*), Bash(make:*), Bash(npm:*), Bash(pytest:*)
+argument-hint: [pr-number]
+description: Generate a comprehensive PR description following the repository's standard template
+---
+
 # Generate PR Description
 
 You are tasked with generating a comprehensive pull request description following the repository's standard template.
