@@ -1,6 +1,6 @@
 @echo off
 REM {{cookiecutter.project_name}} - Windows Sync Script
-REM Syncs thoughts directory with git repository
+REM Syncs memory directory with git repository
 
 echo Syncing {{cookiecutter.project_name}}...
 
@@ -10,9 +10,9 @@ if not exist ".git" (
     exit /b 1
 )
 
-REM Add all changes in thoughts directory
+REM Add all changes in memory directory
 echo Adding changes...
-git add thoughts/
+git add memory/
 
 REM Check if there are changes to commit
 git diff --cached --quiet
@@ -23,7 +23,7 @@ if %errorlevel% == 0 (
 
 REM Get commit message from user or use default
 set /p commit_msg="Enter commit message (or press Enter for default): "
-if "%commit_msg%"=="" set commit_msg=Update thoughts: %date% %time%
+if "%commit_msg%"=="" set commit_msg=Update memory: %date% %time%
 
 REM Commit changes
 echo Committing changes...
@@ -35,7 +35,7 @@ if %errorlevel% == 0 (
     echo Pushing to remote...
     git push origin main
     if %errorlevel% == 0 (
-        echo ✅ Thoughts synced successfully!
+        echo ✅ Memory synced successfully!
     ) else (
         echo ⚠️  Committed locally but failed to push to remote.
     )
@@ -46,4 +46,4 @@ if %errorlevel% == 0 (
 
 echo.
 echo Sync complete. Status:
-git status --porcelain thoughts/
+git status --porcelain memory/

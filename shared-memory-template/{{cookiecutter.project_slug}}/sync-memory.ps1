@@ -1,5 +1,5 @@
 # {{cookiecutter.project_name}} - PowerShell Sync Script
-# Syncs thoughts directory with git repository
+# Syncs memory directory with git repository
 
 param(
     [string]$Message = ""
@@ -13,9 +13,9 @@ if (-not (Test-Path ".git")) {
     exit 1
 }
 
-# Add all changes in thoughts directory
+# Add all changes in memory directory
 Write-Host "Adding changes..."
-git add thoughts/
+git add memory/
 
 # Check if there are changes to commit
 $changes = git diff --cached --name-only
@@ -26,13 +26,13 @@ if (-not $changes) {
 
 # Show what will be committed
 Write-Host "Changes to be committed:" -ForegroundColor Cyan
-git diff --cached --name-status thoughts/
+git diff --cached --name-status memory/
 
 # Get commit message
 if (-not $Message) {
     $Message = Read-Host "Enter commit message (or press Enter for default)"
     if (-not $Message) {
-        $Message = "Update thoughts: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        $Message = "Update memory: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
     }
 }
 
@@ -46,7 +46,7 @@ if ($remotes -contains "origin") {
     Write-Host "Pushing to remote..."
     try {
         git push origin main
-        Write-Host "✅ Thoughts synced successfully!" -ForegroundColor Green
+        Write-Host "✅ Memory synced successfully!" -ForegroundColor Green
     }
     catch {
         Write-Warning "Committed locally but failed to push to remote."
@@ -59,4 +59,4 @@ else {
 
 Write-Host ""
 Write-Host "Sync complete. Status:" -ForegroundColor Green
-git status --porcelain thoughts/
+git status --porcelain memory/

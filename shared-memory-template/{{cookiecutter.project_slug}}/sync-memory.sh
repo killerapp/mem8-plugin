@@ -1,6 +1,6 @@
 #!/bin/bash
 # {{cookiecutter.project_name}} - Unix/Linux Sync Script
-# Syncs thoughts directory with git repository
+# Syncs memory directory with git repository
 
 set -e
 
@@ -12,9 +12,9 @@ if [ ! -d ".git" ]; then
     exit 1
 fi
 
-# Add all changes in thoughts directory
+# Add all changes in memory directory
 echo "Adding changes..."
-git add thoughts/
+git add memory/
 
 # Check if there are changes to commit
 if git diff --cached --quiet; then
@@ -25,7 +25,7 @@ fi
 # Get commit message from user or use default
 read -p "Enter commit message (or press Enter for default): " commit_msg
 if [ -z "$commit_msg" ]; then
-    commit_msg="Update thoughts: $(date)"
+    commit_msg="Update memory: $(date)"
 fi
 
 # Commit changes
@@ -36,7 +36,7 @@ git commit -m "$commit_msg"
 if git remote | grep -q origin; then
     echo "Pushing to remote..."
     if git push origin main; then
-        echo "✅ Thoughts synced successfully!"
+        echo "✅ Memory synced successfully!"
     else
         echo "⚠️  Committed locally but failed to push to remote."
     fi
@@ -47,4 +47,4 @@ fi
 
 echo ""
 echo "Sync complete. Status:"
-git status --porcelain thoughts/
+git status --porcelain memory/
