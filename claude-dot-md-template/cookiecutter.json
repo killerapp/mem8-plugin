@@ -11,8 +11,6 @@
     "include_web_search": true,
     "default_tools": "Read, Grep, Glob, LS",
     "organization_name": "My Organization",
-    "github_org": "your-org",
-    "github_repo": "your-repo",
     "repository_path": "/shared/",
     "_output_dir": "../out"
 }
