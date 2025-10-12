@@ -15,7 +15,7 @@ uv tool install mem8
 
 ```
 .claude/
-├── agents/          # 7 specialized agents
+├── agents/          # 6 specialized agents
 │   ├── codebase-analyzer.md
 │   ├── codebase-locator.md
 │   ├── codebase-pattern-finder.md
