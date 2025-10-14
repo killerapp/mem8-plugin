@@ -73,7 +73,7 @@ After the user describes the issue:
 
 ### Step 2: Investigate the Issue
 
-Spawn parallel Task agents for efficient investigation:
+Spawn parallel subagent tasks for efficient investigation:
 
 ```
 Task 1 - Check Recent Logs:
