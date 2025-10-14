@@ -1,93 +1,155 @@
-# mem8 Official Templates
+# mem8 Claude Code Plugin
 
-Official cookiecutter templates for [mem8](https://github.com/killerapp/mem8).
+Official Claude Code plugin for [mem8](https://github.com/killerapp/mem8) - memory-augmented development workflows.
+
+## What is mem8?
+
+mem8 enhances Claude Code with persistent memory and structured workflows:
+
+- **8 workflow commands** for planning, research, implementation, and validation
+- **6 specialized agents** for codebase analysis and research
+- **Persistent memory** across sessions via the `memory/` directory
+- **Team distribution** through `.claude/settings.json`
 
 ## Installation
 
+### Individual Installation
+
+Add mem8 marketplace and install the plugin:
+
 ```bash
-uv tool install mem8
+/plugin marketplace add killerapp/mem8-templates
+/plugin install mem8@mem8-official
 ```
 
-## Templates
+Verify installation:
 
-### claude-config
-`.claude/` workspace with agents and commands.
-
-```
-.claude/
-├── agents/          # 6 specialized agents
-│   ├── codebase-analyzer.md
-│   ├── codebase-locator.md
-│   ├── codebase-pattern-finder.md
-│   ├── memory-analyzer.md
-│   ├── memory-locator.md
-│   └── web-search-researcher.md
-└── commands/        # 8 workflow commands
-    ├── m8-commit.md
-    ├── m8-debug.md
-    ├── m8-describe-pr.md
-    ├── m8-implement.md
-    ├── m8-local-review.md
-    ├── m8-plan.md
-    ├── m8-research.md
-    └── m8-validate.md
+```bash
+mem8 status
 ```
 
-### memory-repo
-Shared knowledge repository structure.
+The `memory/` directory will be created automatically.
+
+### Team Installation
+
+For automatic installation across your team, add to `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "mem8": {
+      "source": {
+        "source": "github",
+        "repo": "killerapp/mem8-templates"
+      }
+    }
+  },
+  "enabledPlugins": ["mem8@mem8-official"]
+}
+```
+
+When team members trust the repository, mem8 installs automatically.
+
+## Plugin Contents
+
+### Commands (8 total)
+
+```
+commands/
+├── m8-commit.md         # Create well-structured commits
+├── m8-debug.md          # Debug issues with memory context
+├── m8-describe-pr.md    # Generate PR descriptions
+├── m8-implement.md      # Implement from plans
+├── m8-local-review.md   # Set up review environments
+├── m8-plan.md          # Create implementation plans
+├── m8-research.md      # Research codebase
+└── m8-validate.md      # Validate implementations
+```
+
+### Agents (6 total)
+
+```
+agents/
+├── codebase-analyzer.md       # Deep code analysis
+├── codebase-locator.md        # Find relevant files
+├── codebase-pattern-finder.md # Discover patterns
+├── memory-analyzer.md         # Deep memory analysis
+├── memory-locator.md          # Find relevant memory
+└── web-search-researcher.md   # Web research
+```
+
+### Memory Directory Structure
+
+Created automatically during plugin installation:
 
 ```
 memory/
-├── shared/          # Team documents
-│   ├── plans/
-│   ├── research/
-│   ├── prs/
-│   └── decisions/
-├── {username}/      # Personal space
-└── searchable/      # Unified search via symlinks
+├── plans/       # Implementation plans and technical designs
+├── research/    # Research documents and findings
+├── prs/         # Pull request descriptions and reviews
+└── docs/        # Documentation and notes
 ```
-
-### full
-Both claude-config + memory-repo combined.
 
 ## Usage
 
-### Set Default
+### Getting Started
 
 ```bash
-mem8 templates set-default killerapp/mem8-templates
-mem8 init
+# Research your codebase
+/m8-research
+
+# Create an implementation plan
+/m8-plan
+
+# Implement the plan
+/m8-implement memory/plans/your-plan.md
+
+# Validate implementation
+/m8-validate memory/plans/your-plan.md
 ```
 
-### One-Time Use
+### Check Status
 
 ```bash
-mem8 init --template-source killerapp/mem8-templates
+# View plugin status and available commands
+mem8 status
+
+# Detailed view with paths
+mem8 status --detailed
 ```
 
-### Specific Version
+## Plugin Architecture
 
-```bash
-mem8 init --template-source killerapp/mem8-templates@v2.10.0
-```
+### Manifest Structure
 
-### Validation
+The plugin is defined by:
 
-```bash
-# Validate before use
-mem8 templates validate --source killerapp/mem8-templates
+- `.claude-plugin/plugin.json` - Plugin metadata and configuration
+- `.claude-plugin/marketplace.json` - Marketplace catalog definition
+- `hooks/hooks.json` - Post-install automation hooks
+- `scripts/` - Cross-platform setup scripts
 
-# List templates
-mem8 templates list --source killerapp/mem8-templates
-```
+### Post-Install Hooks
+
+The plugin automatically runs:
+
+1. **setup-memory** - Creates `memory/` directory structure
+2. **create-plugin-marker** - Creates `.claude/.mem8-plugin` marker for detection
+
+Scripts support Linux/macOS (bash), Windows (batch), and PowerShell.
 
 ## Customization
 
 ### Fork & Modify
 
+1. Fork this repository
+2. Modify commands, agents, or hooks
+3. Update `.claude-plugin/plugin.json` version
+4. Distribute via your own marketplace:
+
 ```bash
-# Use your fork
-mem8 init --template-source YOUR_ORG/mem8-templates
+/plugin marketplace add YOUR_ORG/mem8-templates
+/plugin install mem8@your-marketplace
 ```
 
 ### Local Development
@@ -95,37 +157,26 @@ mem8 init --template-source YOUR_ORG/mem8-templates
 ```bash
 git clone https://github.com/killerapp/mem8-templates.git
 cd mem8-templates
-# Edit templates...
-mem8 init --template-source ./
+
+# Test changes locally
+/plugin install file://$(pwd)@mem8-official
 ```
 
-## Template Sources
+## Requirements
 
-| Format | Example |
-|--------|---------|
-| GitHub shorthand | `org/repo` |
-| With version | `org/repo@v1.0.0` |
-| With subdirectory | `org/repo#subdir=templates` |
-| Git URL | `https://github.com/org/repo.git` |
-| Local path | `/path/to/templates` or `./templates` |
+- Claude Code (latest version)
+- Git (for memory directory initialization)
 
-## Manifest Format
+## Support
 
-`manifest.yaml` describes available templates:
+- Documentation: https://github.com/killerapp/mem8
+- Issues: https://github.com/killerapp/mem8/issues
+- Plugin docs: https://docs.claude.com/docs/claude-code/plugins
 
-```yaml
-version: 1
-source: "."
+## Version
 
-templates:
-  template-name:
-    path: "template-directory"
-    type: "cookiecutter"  # or "composite"
-    description: "Template description"
-    variables:
-      key: "default value"
-```
+Current version: **3.0.0** (Plugin-based architecture)
 
-## Toolbelt
+## License
 
-Templates include `.mem8/toolbelt.json` listing core/recommended CLI tools. `mem8 doctor` audits installs without acting as package manager. Fork to publish org-specific defaults.
+MIT License - See LICENSE file for details

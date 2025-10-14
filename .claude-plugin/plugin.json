@@ -1,0 +1,25 @@
+{
+  "name": "mem8",
+  "version": "3.0.0",
+  "description": "Memory-augmented development workflows for Claude Code. Provides commands for planning, implementation, debugging, and research with persistent memory.",
+  "author": {
+    "name": "killerapp",
+    "email": "contact@mem8.dev",
+    "url": "https://github.com/killerapp"
+  },
+  "homepage": "https://github.com/killerapp/mem8",
+  "repository": "https://github.com/killerapp/mem8-templates",
+  "license": "Apache-2.0",
+  "keywords": [
+    "memory",
+    "workflow",
+    "planning",
+    "research",
+    "development",
+    "automation",
+    "claude-code"
+  ],
+  "commands": "./commands/",
+  "agents": "./agents/",
+  "hooks": "./hooks/hooks.json"
+}

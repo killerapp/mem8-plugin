@@ -1,0 +1,26 @@
+{
+  "name": "mem8-official",
+  "owner": {
+    "name": "killerapp",
+    "email": "contact@mem8.dev"
+  },
+  "metadata": {
+    "description": "Official mem8 plugin marketplace for Claude Code",
+    "version": "3.0.0",
+    "repository": "https://github.com/killerapp/mem8-templates"
+  },
+  "plugins": [
+    {
+      "name": "mem8",
+      "source": ".",
+      "description": "Memory-augmented development workflows with planning, research, and debugging commands",
+      "version": "3.0.0",
+      "author": {
+        "name": "killerapp"
+      },
+      "keywords": ["memory", "workflow", "planning", "research", "automation"],
+      "category": "productivity",
+      "strict": true
+    }
+  ]
+}

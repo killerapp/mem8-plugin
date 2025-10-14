@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostInstall": [
+      {
+        "type": "command",
+        "command": "${CLAUDE_PLUGIN_ROOT}/scripts/setup-memory.sh",
+        "description": "Initialize memory directory structure"
+      },
+      {
+        "type": "command",
+        "command": "${CLAUDE_PLUGIN_ROOT}/scripts/create-plugin-marker.sh",
+        "description": "Create plugin installation marker"
+      }
+    ]
+  }
+}
