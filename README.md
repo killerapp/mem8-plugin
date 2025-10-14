@@ -18,7 +18,7 @@ mem8 enhances Claude Code with persistent memory and structured workflows:
 Add mem8 marketplace and install the plugin:
 
 ```bash
-/plugin marketplace add killerapp/mem8-templates
+/plugin marketplace add killerapp/mem8-plugin
 /plugin install mem8@mem8-official
 ```
 
@@ -40,7 +40,7 @@ For automatic installation across your team, add to `.claude/settings.json`:
     "mem8": {
       "source": {
         "source": "github",
-        "repo": "killerapp/mem8-templates"
+        "repo": "killerapp/mem8-plugin"
       }
     }
   },
@@ -148,15 +148,15 @@ Scripts support Linux/macOS (bash), Windows (batch), and PowerShell.
 4. Distribute via your own marketplace:
 
 ```bash
-/plugin marketplace add YOUR_ORG/mem8-templates
+/plugin marketplace add YOUR_ORG/mem8-plugin
 /plugin install mem8@your-marketplace
 ```
 
 ### Local Development
 
 ```bash
-git clone https://github.com/killerapp/mem8-templates.git
-cd mem8-templates
+git clone https://github.com/killerapp/mem8-plugin.git
+cd mem8-plugin
 
 # Test changes locally
 /plugin install file://$(pwd)@mem8-official
