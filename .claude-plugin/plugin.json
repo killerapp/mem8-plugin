@@ -19,6 +19,5 @@
     "automation",
     "claude-code"
   ],
-  "commands": "./commands/",
   "hooks": "./hooks/hooks.json"
 }
