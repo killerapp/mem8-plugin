@@ -33,22 +33,22 @@ This directory stores persistent memory for your project:
 Use mem8 commands to create and manage memory:
 
 ``````bash
-/m8-plan          # Create implementation plan
-/m8-research      # Research codebase or topic
-/m8-implement     # Implement from plan
-/m8-validate      # Validate implementation
+/mem8:plan          # Create implementation plan
+/mem8:research      # Research codebase or topic
+/mem8:implement     # Implement from plan
+/mem8:validate      # Validate implementation
 ``````
 
 ## Commands
 
-- ``/m8-commit`` - Create well-structured commits
-- ``/m8-debug`` - Debug issues with memory context
-- ``/m8-describe-pr`` - Generate PR descriptions
-- ``/m8-implement`` - Implement from plans
-- ``/m8-local-review`` - Set up review environments
-- ``/m8-plan`` - Create implementation plans
-- ``/m8-research`` - Research codebase
-- ``/m8-validate`` - Validate implementations
+- ``/mem8:commit`` - Create well-structured commits
+- ``/mem8:debug`` - Debug issues with memory context
+- ``/mem8:describe-pr`` - Generate PR descriptions
+- ``/mem8:implement`` - Implement from plans
+- ``/mem8:local-review`` - Set up review environments
+- ``/mem8:plan`` - Create implementation plans
+- ``/mem8:research`` - Research codebase
+- ``/mem8:validate`` - Validate implementations
 
 For more information, see: https://github.com/killerapp/mem8
 "@ | Out-File -FilePath "$MEMORY_DIR/README.md" -Encoding UTF8
@@ -56,6 +56,6 @@ For more information, see: https://github.com/killerapp/mem8
 Write-Host "✓ Memory directory created successfully"
 Write-Host ""
 Write-Host "Next steps:"
-Write-Host "  • Use /m8-research to explore your codebase"
-Write-Host "  • Use /m8-plan to create implementation plans"
+Write-Host "  • Use /mem8:research to explore your codebase"
+Write-Host "  • Use /mem8:plan to create implementation plans"
 Write-Host "  • Run 'mem8 status' to verify setup"

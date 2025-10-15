@@ -56,14 +56,14 @@ When team members trust the repository, mem8 installs automatically.
 
 ```
 commands/
-├── m8-commit.md         # Create well-structured commits
-├── m8-debug.md          # Debug issues with memory context
-├── m8-describe-pr.md    # Generate PR descriptions
-├── m8-implement.md      # Implement from plans
-├── m8-local-review.md   # Set up review environments
-├── m8-plan.md          # Create implementation plans
-├── m8-research.md      # Research codebase
-└── m8-validate.md      # Validate implementations
+├── commit.md         # Create well-structured commits
+├── debug.md          # Debug issues with memory context
+├── describe-pr.md    # Generate PR descriptions
+├── implement.md      # Implement from plans
+├── local-review.md   # Set up review environments
+├── plan.md          # Create implementation plans
+├── research.md      # Research codebase
+└── validate.md      # Validate implementations
 ```
 
 ### Agents (6 total)
@@ -96,16 +96,16 @@ memory/
 
 ```bash
 # Research your codebase
-/m8-research
+/mem8:research
 
 # Create an implementation plan
-/m8-plan
+/mem8:plan
 
 # Implement the plan
-/m8-implement memory/plans/your-plan.md
+/mem8:implement memory/plans/your-plan.md
 
 # Validate implementation
-/m8-validate memory/plans/your-plan.md
+/mem8:validate memory/plans/your-plan.md
 ```
 
 ### Check Status

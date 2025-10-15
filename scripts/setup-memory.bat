@@ -33,10 +33,10 @@ echo.
 echo Use mem8 commands to create and manage memory:
 echo.
 echo ```bash
-echo /m8-plan          # Create implementation plan
-echo /m8-research      # Research codebase or topic
-echo /m8-implement     # Implement from plan
-echo /m8-validate      # Validate implementation
+echo /mem8:plan          # Create implementation plan
+echo /mem8:research      # Research codebase or topic
+echo /mem8:implement     # Implement from plan
+echo /mem8:validate      # Validate implementation
 echo ```
 echo.
 echo For more information, see: https://github.com/killerapp/mem8
@@ -45,6 +45,6 @@ echo For more information, see: https://github.com/killerapp/mem8
 echo ✓ Memory directory created successfully
 echo.
 echo Next steps:
-echo   • Use /m8-research to explore your codebase
-echo   • Use /m8-plan to create implementation plans
+echo   • Use /mem8:research to explore your codebase
+echo   • Use /mem8:plan to create implementation plans
 echo   • Run 'mem8 status' to verify setup
