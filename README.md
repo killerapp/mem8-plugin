@@ -13,19 +13,36 @@ mem8 enhances Claude Code with persistent memory and structured workflows:
 
 ## Installation
 
-### Individual Installation
+### Step 1: Install mem8 CLI (Recommended)
+
+For full functionality including search, sync, and diagnostics:
+
+```bash
+# Install with uv (fast, modern Python package manager)
+uv tool install mem8
+```
+
+:::tip Don't have uv?
+Install it first:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+:::
+
+Verify CLI installation:
+
+```bash
+mem8 --version
+mem8 status
+```
+
+### Step 2: Install Plugin
 
 Add mem8 marketplace and install the plugin:
 
 ```bash
 /plugin marketplace add killerapp/mem8-plugin
 /plugin install mem8@mem8-official
-```
-
-Verify installation:
-
-```bash
-mem8 status
 ```
 
 The `memory/` directory will be created automatically.
