@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "mem8",
-      "source": ".",
+      "source": "./",
       "description": "Memory-augmented development workflows with planning, research, and debugging commands",
       "version": "3.0.0",
       "author": {
