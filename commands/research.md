@@ -74,18 +74,23 @@ Then wait for the user's research query.
    - **IMPORTANT**: Use the mem8 CLI to generate proper metadata. DO NOT manually gather git information.
    - Run the command with the user's actual research question/topic:
      ```bash
-     mem8 metadata research "the user's actual question here" --format frontmatter
+     mem8 metadata research "the user's actual question here" --format json
      ```
-   - **Example**: If user asks "How does auth work?", run: `mem8 metadata research "How does auth work?" --format frontmatter`
-   - This will output YAML frontmatter with all required fields (date, researcher, git_commit, branch, repository, etc.)
+   - **Example**: If user asks "How does auth work?", run: `mem8 metadata research "How does auth work?" --format json`
+   - This will output JSON with all required fields including a **slug** field for the filename
+   - Parse the JSON to extract the `slug` field for use in the filename
    - **Note**: The topic argument is optional and defaults to "research" if omitted, but it's better to use the actual user question
    - Store this output to use in the next step
-   - Filename for the document: `memory/research/YYYY-MM-DD_HH-MM-SS_topic.md`
+   - **Filename format**: `memory/research/YYYY-MM-DD_HH-MM-SS_{slug}.md`
+     - Extract timestamp from the `date` field: parse ISO format and convert to `YYYY-MM-DD_HH-MM-SS`
+     - Use the `slug` field directly from the metadata JSON
+     - Example: `2025-10-15_12-15-24_memory-directory-documentation.md`
 
 6. **Generate research document:**
-   - **CRITICAL**: Use the metadata output from `mem8 metadata research` command in step 5
+   - **CRITICAL**: Use the metadata from step 5 to generate both frontmatter and filename
+   - Get frontmatter by running: `mem8 metadata research "topic" --format frontmatter`
    - DO NOT manually run git commands or gather metadata yourself
-   - Structure the document with the YAML frontmatter from step 5, followed by content:
+   - Structure the document with the YAML frontmatter, followed by content:
      ```markdown
      ---
      date: [Current date and time with timezone in ISO format]
@@ -94,6 +99,7 @@ Then wait for the user's research query.
      branch: [Current branch name]
      repository: [Repository name]
      topic: "[User's Question/Topic]"
+     slug: [URL-safe slug from metadata]
      tags: [research, codebase, relevant-component-names]
      status: complete
      last_updated: [Current date in YYYY-MM-DD format]
@@ -167,6 +173,13 @@ Then wait for the user's research query.
 
 ## Important notes:
 - **ALWAYS use `mem8 metadata research` command** - NEVER manually gather git metadata
+- **Use the slug from metadata JSON** - NEVER make up your own filename slug
+- **Filename format**: `YYYY-MM-DD_HH-MM-SS_{slug}.md` where slug comes from `mem8 metadata research --format json`
+- **Sorting**: Files use ISO date format (YYYY-MM-DD) which sorts chronologically
+  - Ascending sort (A-Z, default): Oldest files first
+  - Descending sort (Z-A): Newest files first ← **Recommended**
+  - In VS Code: Click the column header to toggle sort order
+  - Or sort by "Modified" date descending for most recent work
 - Always use parallel subagent tasks to maximize efficiency and minimize context usage
 - Always run fresh codebase research - never rely solely on existing research documents
 - The memory/ directory provides historical context to supplement live findings
