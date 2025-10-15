@@ -66,7 +66,7 @@ Then wait for the user's research query.
    - Use memory/ findings as supplementary historical context
    - Connect findings across different components
    - Include specific file paths and line numbers for reference
-   - Verify all memory/ paths are correct (e.g., memory/allison/ not memory/shared/ for personal files)
+   - Verify all memory/ paths are correct using flat structure (memory/plans/, memory/research/, etc.)
    - Highlight patterns, connections, and architectural decisions
    - Answer the user's specific questions with concrete evidence
 
@@ -80,7 +80,7 @@ Then wait for the user's research query.
    - This will output YAML frontmatter with all required fields (date, researcher, git_commit, branch, repository, etc.)
    - **Note**: The topic argument is optional and defaults to "research" if omitted, but it's better to use the actual user question
    - Store this output to use in the next step
-   - Filename for the document: `memory/shared/research/YYYY-MM-DD_HH-MM-SS_topic.md`
+   - Filename for the document: `memory/research/YYYY-MM-DD_HH-MM-SS_topic.md`
 
 6. **Generate research document:**
    - **CRITICAL**: Use the metadata output from `mem8 metadata research` command in step 5
@@ -133,12 +133,12 @@ Then wait for the user's research query.
 
      ## Historical Context (from memory/)
      [Relevant insights from memory/ directory with references]
-     - `memory/shared/something.md` - Historical decision about X
-     - `memory/local/notes.md` - Past exploration of Y
+     - `memory/decisions/something.md` - Historical decision about X
+     - `memory/docs/notes.md` - Past exploration of Y
      Note: Paths exclude "searchable/" even if found there
 
      ## Related Research
-     [Links to other research documents in memory/shared/research/]
+     [Links to other research documents in memory/research/]
 
      ## Open Questions
      [Any areas that need further investigation]
@@ -188,10 +188,10 @@ Then wait for the user's research query.
 - **Path handling**: The memory/searchable/ directory contains hard links for searching
   - Always document paths by removing ONLY "searchable/" - preserve all other subdirectories
   - Examples of correct transformations:
-    - `memory/searchable/allison/old_stuff/notes.md` → `memory/allison/old_stuff/notes.md`
-    - `memory/searchable/shared/prs/123.md` → `memory/shared/prs/123.md`
-    - `memory/searchable/global/shared/templates.md` → `memory/global/shared/templates.md`
-  - NEVER change allison/ to shared/ or vice versa - preserve the exact directory structure
+    - `memory/searchable/docs/notes.md` → `memory/docs/notes.md`
+    - `memory/searchable/prs/123.md` → `memory/prs/123.md`
+    - `memory/searchable/research/auth.md` → `memory/research/auth.md`
+  - NEVER modify the subdirectory structure - preserve the exact paths found
   - This ensures paths are correct for editing and navigation
 - **Frontmatter consistency**:
   - Always include frontmatter at the beginning of research documents
