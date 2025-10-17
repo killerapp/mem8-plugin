@@ -36,16 +36,16 @@ Then wait for the user's research query.
    - We now have specialized agents that know how to do specific research tasks:
 
    **For codebase research:**
-   - Use the **codebase-locator** agent to find WHERE files and components live
-   - Use the **codebase-analyzer** agent to understand HOW specific code works
-   - Use the **codebase-pattern-finder** agent if you need examples of similar implementations
+   - Use the **mem8:codebase-locator** agent to find WHERE files and components live
+   - Use the **mem8:codebase-analyzer** agent to understand HOW specific code works
+   - Use the **mem8:codebase-pattern-finder** agent if you need examples of similar implementations
 
    **For memory directory:**
-   - Use the **memory-locator** agent to discover what documents exist about the topic
-   - Use the **memory-analyzer** agent to extract key insights from specific documents (only the most relevant ones)
+   - Use the **mem8:memory-locator** agent to discover what documents exist about the topic
+   - Use the **mem8:memory-analyzer** agent to extract key insights from specific documents (only the most relevant ones)
 
    **For web research (only if user explicitly asks):**
-   - Use the **web-search-researcher** agent for external documentation and resources
+   - Use the **mem8:web-search-researcher** agent for external documentation and resources
    - IF you use web-research agents, instruct them to return LINKS with their findings, and please INCLUDE those links in your final report
 
    **For GitHub issues (if relevant):**
