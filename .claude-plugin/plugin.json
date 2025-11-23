@@ -1,6 +1,6 @@
 {
   "name": "mem8",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Memory-augmented development workflows for Claude Code. Provides commands for planning, implementation, debugging, and research with persistent memory.",
   "author": {
     "name": "killerapp",

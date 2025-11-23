@@ -6,19 +6,19 @@
   },
   "metadata": {
     "description": "Official mem8 plugin marketplace for Claude Code",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "repository": "https://github.com/killerapp/mem8-plugin"
   },
   "plugins": [
     {
       "name": "mem8",
       "source": "./",
-      "description": "Memory-augmented development workflows with planning, research, and debugging commands",
-      "version": "3.0.0",
+      "description": "Memory-augmented development workflows with planning, research, and debugging commands. Includes PARA-based knowledge management.",
+      "version": "3.1.0",
       "author": {
         "name": "killerapp"
       },
-      "keywords": ["memory", "workflow", "planning", "research", "automation"],
+      "keywords": ["memory", "workflow", "planning", "research", "automation", "knowledge-management", "para", "pkm"],
       "category": "productivity",
       "strict": true
     }
