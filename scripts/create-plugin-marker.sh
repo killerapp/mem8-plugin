@@ -13,7 +13,7 @@ fi
 cat > "$MARKER_FILE" << EOF
 {
   "installed_via": "plugin",
-  "plugin_version": "3.0.0",
+  "plugin_version": "3.1.0",
   "installed_at": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
   "marketplace": "mem8-official"
 }
