@@ -18,6 +18,5 @@
     "development",
     "automation",
     "claude-code"
-  ],
-  "hooks": "./hooks/hooks.json"
+  ]
 }
